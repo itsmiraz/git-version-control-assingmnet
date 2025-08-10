@@ -1,0 +1,22 @@
+name : My First Workflow
+
+on: 
+  push:
+    branches:
+      - main
+jobs:
+  log_check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checking repository
+        uses: actions/checkout@v4
+
+      - name : Print hello.txt contents
+        run: |
+          if [-f "hello.txt"]; then
+            echo "---- hello.txt ----"
+            cat hello.txt
+            echo "--------"
+          else 
+            echo "hello.txt not found" && exit 1
+
