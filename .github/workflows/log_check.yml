@@ -19,4 +19,6 @@ jobs:
             echo "--------"
           else 
             echo "hello.txt not found" && exit 1
+          fi
+
 
